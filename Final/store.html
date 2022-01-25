@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Wine Store Database</title>
+<link href="styles/responsive.css" rel="stylesheet" type="text/css">
+<link rel = "stylesheet" type = "text/css" href = "styles/style.css">
+<style type="text/css">
+
+.auto-style1 {
+
+	margin-left: 28px;
+
+}
+.auto-style2 {
+
+	margin-left: 13px;
+
+}
+.auto-style3 {
+
+	margin-left: 55px;
+
+}
+</style>
+</head>
+
+<script type="text/javascript"> //https://websistent.com/javascript-validation-textbox-combobox-radiobutton-checkbox/
+	// Validate Check Boxes
+	function validateForm ( form ) {
+		
+		requiredCheckbox = new Array( "meetavail" );
+
+	return requireCheckboxs( form, requiredCheckbox ) && checkProblems ();
+	}
+</script>
+
+<script>
+	// Validates the wine type form field 
+	function validate() {
+	var b = 0, chk=document.getElementsByName("type")
+	for(j=0;j<chk.length;j++) {
+		if(chk.item(j).checked == false) {
+			b++;
+		}
+	}
+	if(b == chk.length) {
+		alert("Please select a wine type.");
+		document.getElementById("tps").style.border = "2px solid red";
+		return false;
+	} else {
+		document.getElementById("tps").style.border = "";
+		}
+	}
+</script>
+
+<script>
+	// Validates year text entry 
+	function myFunction() {
+		var year = document.forms["myForm"]["year"].value;
+		if(year.length < 1 || year < 1960 || year > 2010){
+			document.getElementById('error-year').innerHTML = "Please enter a year between 1960 and 2010.";
+			return false;
+		}
+	}
+</script>
+
+<body>
+<!-- Winestore image  -->
+<img src="Winestore.jpeg" alt="" width="480" height="320" class="center"/>
+	
+<details>
+	<!-- Summary section (collapsable from details tag) -->
+	<summary class="center">Winestore Query: </summary>
+
+	<p class="center">Specifically query and find wines based on type and year. Choose a type, fill out your email, and fill out the wine year, then click "submit."</p>
+
+</details>
+
+<div class="center" id="layer2" style="text-align:center; width: 725px; height: 275px; z-index: 1; left: 100px; top: 330px; color: #000000; background-color: #FFFFFF">
+<form name="myForm" action="store.php" method="post" class = "center" style="position: center">	
+		<br> <!-- Checkbox field for type of wine form --> 
+		Wine Type:&nbsp;
+		<tr><td>
+			<span id="tps">
+				<input type="checkbox" name="type" onchange="validate()" value="All"> All
+				<input type="checkbox" name="type" onchange="validate()" value="Sparkling"> Sparkling
+				<input type="checkbox" name="type" onchange="validate()" value="Fortified"> Fortified <br>
+				<input type="checkbox" name="type" onchange="validate()" value="White"> White
+				<input type="checkbox" name="type" onchange="validate()" value="Sweet"> Sweet
+				<input type="checkbox" name="type" onchange="validate()" value="Red"> Red
+			</span>
+        </td></tr>
+
+		<br> <!-- Email form (required keyword validates email) --> 
+		<label>Email: </label><input name=email type="email" required/>
+		
+		<br> <!-- Wine year from user text input -->
+		<label for="text">Wine Year:</label>
+		<input type="text" name = "year" onchange="myFunction()"/>
+		<p id= "error-year"></p>
+		<br>
+
+<input type="submit" value = "Submit!" />
+</form>
+
+</body>
+	<h1>Wine Store</h1>
+</html>

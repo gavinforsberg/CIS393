@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bradley Adventure Club: Adventures!</title>
+<link href="styles/responsive.css" rel="stylesheet" type="text/css">
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/source-sans-pro:n4,n2,n6:default.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>BU Adventure Club Register!
+    <a href = "https://www.instagram.com/braves_adventureclub/" target = "_self">
+	<img src="images/logo.png"width="75" height="75" border="0">
+	</a>
+</h1>
+    <nav>
+      <h2 id="menulink"><a href="#navlinks">Menu</a></h2>
+      <ul class="displayed" id="navlinks">
+        <li><a href="BUAC.html">Home</a></li>
+        <li><a href="Adventures.html">Adventures</a></li>
+        <li><a href="AC_login.html">LogIn</a></li>
+        <li><a href="AC_register.html" class="thispage">Register</a></li>
+        <li><a href="interest.html">Interest</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+<p>Please fill out this form to register.</p>
+<img src="images/tent.JPG" width="500px" height="400px" align="right" >
+
+
+<form action="cgi-bin/AC_register.cgi" method="POST">
+<p>
+</p><h3>Input Tag</h3>
+Name: <br><input type="text" name="username" value="Name" size="20" maxlength="25" >
+<br>
+Email:<br> <input type="text" name="email" value="Email" size="20" maxlength="30">
+<br>
+Student ID:<br> <input type="text" name="studentID" value="ID#" size="20" maxlength="10">
+
+<p>Weekdays Available for Meetings at 1:00 PM: <br>
+<input type="checkbox" name="availability" value="Monday"> Monday<br>
+<input type="checkbox" name="availability" value="Tuesday"> Tuesday<br>
+<input type="checkbox" name="availability" value="Wednesday"> Wednesday<br>
+<input type="checkbox" name="availability" value="Thursday"> Thursday<br>
+<input type="checkbox" name="availability" value="Friday"> Friday<br></p>
+
+
+<p>Graduation Year: <br>
+<input type="radio" name="year" value="2020" checked=""> 2020<br>
+<input type="radio" name="year" value="2021"> 2021<br>
+<input type="radio" name="year" value="2022"> 2022<br></p>
+Do you live on campus?: 
+<br><select name="livson" size="1">
+  <option selected="">On Campus</option>
+  <option>Remote</option>
+  <option>Commuter</option>
+</select>
+
+<p>Choose the activities you enjoy (hold control to select more than one): 
+<br><select name="activity" size="4" multiple="">
+  <option>Horseback Riding</option>
+  <option>Rock Climbing</option>
+  <option>Bicycling</option>
+  <option>Running/Walking</option>
+  <option>Hiking</option>
+</select>
+</p><p></p>
+
+<p>
+Suggestions for events or other things we should know about you:
+<br><textarea rows="10" cols="40" name="comments" wrap="virtual">Your comments</textarea>
+</p>
+
+<p>Reset button: <input type="reset" value="Reset the form fields"></p>
+<p>Submit button: <input type="submit" name="submit_button" value="Submit the Form"></p>
+
+</form>
+
+ <script type="text/javascript" src="js/menu.js"></script> 
+
+</body></html>
